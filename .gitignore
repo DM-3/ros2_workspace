@@ -1,4 +1,8 @@
-## ROS related git ignores
+## Custom additions
+log/
+install/
+
+## ROS related git ignores (https://github.com/github/gitignore/blob/main/ROS.gitignore)
 
 devel/
 logs/
