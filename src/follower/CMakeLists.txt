@@ -13,10 +13,19 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
 
-add_executable(main src/follower.cpp)
-ament_target_dependencies(main rclcpp std_msgs)
+add_executable(main 
+  "include/follower/follower.hpp"   
+  "src/follower.cpp"
+  "src/main.cpp")
+
+target_include_directories(main PRIVATE "include")
+ament_target_dependencies(main 
+  rclcpp 
+  sensor_msgs 
+  geometry_msgs)
 
 install(TARGETS
   main
