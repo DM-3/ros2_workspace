@@ -51,6 +51,12 @@ source install/setup.bash
 ros2 run follower main
 ```
 
+### Parameters
+- ```minDistance``` minimal distance to an object before the robot stops approaching
+- ```linearSpeed``` linear movement speed
+- ```angularSpeed``` rotational movement speed
+- ```openingAngle``` angle deviation from 0° within which the robot will feel confident to drive forwards
+
 
 ## Camera_Line
 C++ node that has the turtlebot drive along a white 
@@ -68,3 +74,9 @@ In the workspace directory call:
 source install/setup.bash
 ros2 launch camera_line launch.yaml
 ```
+
+### Parameters
+- ```linearSpeed``` linear movement speed
+- ```angularSpeed``` rotational movement speed
+- ```openingRatio``` ratio between the coordinate of the line in the cameras image and the image width,
+when the the robot will feel confident to drive forwards 
