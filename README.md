@@ -4,6 +4,7 @@ Repository for the winter semester 23/24 robotics course at the TU Freiberg
 ## Projects
 + [Timing_Tubaf](#timing_tubaf)
 + [Follower](#follower)
++ [Camera_Line](#camera_line)
 
 
 ## Timing_Tubaf
@@ -48,4 +49,22 @@ In the workspace directory call:
 ```
 source install/setup.bash
 ros2 run follower main
+```
+
+
+## Camera_Line
+C++ node that has the turtlebot drive along a white 
+line on the ground, using the builtin camera.
+
+### Build
+In the workspace directory call:
+
+```colcon build --packages-select camera_line```
+
+### Run
+In the workspace directory call:
+
+```
+source install/setup.bash
+ros2 launch camera_line launch.yaml
 ```
