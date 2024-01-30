@@ -1,0 +1,8 @@
+launch:
+
+- node:
+    pkg: "camera_line"
+    exec: "main"
+    name: "Line_Follower"
+    namespace: "camera_line"
+  

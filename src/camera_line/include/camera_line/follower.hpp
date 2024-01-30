@@ -8,6 +8,12 @@
 #include "sensor_msgs/msg/compressed_image.hpp"
 #include "geometry_msgs/msg/twist.hpp"
 
+#include "cv_bridge/cv_bridge.h"
+#include "opencv4/opencv2/core.hpp"
+#include "opencv4/opencv2/highgui.hpp"
+
+
+
 class Follower : public rclcpp::Node
 {
 public:
@@ -25,9 +31,10 @@ private:
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr _movePub;
 
     // transfer state between callbacks
-    int _targetAngle = 0;
+    double _rotationDiff = 0;
 
     // parameters
     double _linearSpeed;
     double _angularSpeed;
+    double _openingRatio;
 };

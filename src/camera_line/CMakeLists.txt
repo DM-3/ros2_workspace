@@ -15,6 +15,8 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
 
 add_executable(main 
   "include/camera_line/follower.hpp"
@@ -25,10 +27,17 @@ target_include_directories(main PRIVATE "include")
 ament_target_dependencies(main
   rclcpp
   sensor_msgs
-  geometry_msgs)
+  geometry_msgs
+  OpenCV
+  cv_bridge)
 
 install(TARGETS
   main
   DESTINATION lib/${PROJECT_NAME})
+
+install(FILES
+  "launch.yaml"
+  DESTINATION share/${PROJECT_NAME}
+)
 
 ament_package()
